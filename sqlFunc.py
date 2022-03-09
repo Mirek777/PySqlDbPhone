@@ -34,24 +34,24 @@ def excecute_query(connection, query):
 # ___SQL Создание таблиц___
 
 # функция для создания таблицы юзеров
-def create_table_user(conn):
+def create_table_company(conn):
     excecute_query(conn, sqlQueryCreate.create_table_company)
 
 
 # функция для создания таблицы постов
-def create_table_posts(conn):
+def create_table_phone(conn):
     excecute_query(conn, sqlQueryCreate.create_table_phone)
 
 # ___SQL Добавление данных___
 
 # функция для добавления данных в таблицу компаний
-def create_data_users(conn):
-    excecute_query(conn, sqlQueryAddData.create_users)
+def create_data_company(conn):
+    excecute_query(conn, sqlQueryAddData.create_company)
 
 
 # функция для добавления данных в таблицу телефонов
-def create_data_posts(conn):
-    excecute_query(conn, sqlQueryAddData.create_posts)
+def create_data_phone(conn):
+    excecute_query(conn, sqlQueryAddData.create_phone)
 
 
 # ___SQL Извлечение данных___

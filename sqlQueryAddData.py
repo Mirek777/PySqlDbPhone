@@ -1,25 +1,27 @@
 
 # SQL запрос на добавление данных в таблицу компаний
-create_users = """
+create_company = """
 INSERT INTO
-  users (name, age, gender, nationality)
+  company (companyId, companyName, companyCountry)
 VALUES
-  ('James', 25, 'male', 'USA'),
-  ('Leila', 32, 'female', 'France'),
-  ('Brigitte', 35, 'female', 'England'),
-  ('Mike', 40, 'male', 'Denmark'),
-  ('Elizabeth', 21, 'female', 'Canada');
+  (20, 'Apple', 'USA'),
+  (33, 'Xiaomi', 'China'),
+  (11, 'Nokia', 'Finland'),
+  (8, 'huawei', 'China');
 """
 
 # SQL запрос на добавление данных в таблицу телефонов
-create_posts = """
+create_phone = """
 INSERT INTO
-  posts (title, description, user_id)
+  phone (phoneId, phoneMpdel, companyId, price)
 VALUES
-  ("Happy", "I am feeling very happy today", 1),
-  ("Hot Weather", "The weather is very hot today", 2),
-  ("Help", "I need some help with my work", 2),
-  ("Great News", "I am getting married", 1),
-  ("Interesting Game", "It was a fantastic game of tennis", 5),
-  ("Party", "Anyone up for a late-night party today?", 3);
+  (43, 'iPhone 13 Pro Max', 20, 135000),
+  (18, 'iPhone SE', 20, 105000),
+  (16, 'iPhone XS', 20, 35000),
+  (40, '1100', 11, 5000),
+  (4, 'Asha 311', 11, 3000),
+  (88, 'Mi 5X', 33, 11000)
+  (83, 'Mi 8', 33, 10000)
+  (64, 'P50 Pro', 8, 21000)
+  (11, 'Nova 9', 8, 22000);
 """

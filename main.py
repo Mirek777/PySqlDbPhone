@@ -4,22 +4,18 @@ import sqlFunc
 connection = sqlFunc.create_connection("D:\\DBPhone.sqlite")
 
 # создание таблиц
-# sqlFunc.create_table_user(connection)
-# sqlFunc.create_table_posts(connection)
-# sqlFunc.create_table_comments(connection)
-# sqlFunc.create_table_likes(connection)
+sqlFunc.create_table_company(connection)
+sqlFunc.create_table_phone(connection)
 
 # заполнение данными
-# sqlFunc.create_data_users(connection)
-# sqlFunc.create_data_comments(connection)
-# sqlFunc.create_data_posts(connection)
-# sqlFunc.create_data_likes(connection)
+sqlFunc.create_data_company(connection)
+sqlFunc.create_data_phone(connection)
 
 # чтение данных
-sqlFunc.read_table_users(connection)
-print("")
-sqlFunc.read_table_posts(connection)
-print("")
-sqlFunc.read_users_posts(connection)
-print("")
-sqlFunc.readPostsDescName(connection)
+# sqlFunc.read_table_users(connection)
+# print("")
+# sqlFunc.read_table_posts(connection)
+# print("")
+# sqlFunc.read_users_posts(connection)
+# print("")
+# sqlFunc.readPostsDescName(connection)
