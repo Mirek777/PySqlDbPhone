@@ -48,12 +48,12 @@ def create_table_phone(conn):
 
 # функция для добавления данных в таблицу компаний
 def create_data_company(conn):
-    excecute_query(conn, sqlQueryAddData.create_company)
+    excecute_query(conn, sqlQueryAddData.add_company)
 
 
 # функция для добавления данных в таблицу телефонов
 def create_data_phone(conn):
-    excecute_query(conn, sqlQueryAddData.create_phone)
+    excecute_query(conn, sqlQueryAddData.add_phone)
 
 #
 # # ___SQL Извлечение данных___
