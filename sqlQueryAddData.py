@@ -7,13 +7,13 @@ VALUES
   (20, 'Apple', 'USA'),
   (33, 'Xiaomi', 'China'),
   (11, 'Nokia', 'Finland'),
-  (8, 'huawei', 'China');
+  (8, 'Huawei', 'China');
 """
 
 # SQL запрос на добавление данных в таблицу телефонов
 create_phone = """
 INSERT INTO
-  phone (phoneId, phoneMpdel, companyId, price)
+  phone (phoneId, phoneModel, company_id, price)
 VALUES
   (43, 'iPhone 13 Pro Max', 20, 135000),
   (18, 'iPhone SE', 20, 105000),
