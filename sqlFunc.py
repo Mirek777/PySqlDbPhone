@@ -2,8 +2,8 @@ import sqlite3
 from sqlite3 import Error
 import sqlQueryCreate
 import sqlQueryAddData
-# import sqlQueryRead
-# import sqlQueryJoin
+import sqlQuerySelect
+
 
 # ___Обшие___
 
@@ -55,44 +55,26 @@ def create_data_company(conn):
 def create_data_phone(conn):
     excecute_query(conn, sqlQueryAddData.add_phone)
 
-#
-# # ___SQL Извлечение данных___
-#
-# # общая функция извлечения данных
-# def execute_read_query(connection, query):
-#     cursor = connection.cursor()
-#     result = None
-#     try:
-#         cursor.execute(query)
-#         result = cursor.fetchall()
-#         return result
-#     except Error as e:
-#         print(f"The error '{e}' occurred")
-#
-#
-# # функция извлечения данных из таблицы всех юзеров
-# def read_table_users(conn):
-#     users = execute_read_query(conn, sqlQueryRead.select_users)
-#     for user in users:
-#         print(user)
-#
-#
-# # функция извлечения данных из таблицы всех постов
-# def read_table_posts(conn):
-#     posts = execute_read_query(conn, sqlQueryRead.select_posts)
-#     for post in posts:
-#         print(post)
-#
-#
-# # SQL запрос на возрат идентификаторов, имен пользователей и описание сообщений этих пользователей
-# def read_users_posts(conn):
-#     users_posts = execute_read_query(conn, sqlQueryJoin.select_users_posts)
-#     for users_post in users_posts:
-#         print(users_post)
-#
-#
-# # SQL запрос на возрат все сообщения вместе с комментариями к сообщениям и именами пользователей
-# def readPostsDescName(conn):
-#     posts_comments_users = execute_read_query(conn, sqlQueryJoin.select_posts_comments_users)
-#
-#
+
+# ___SQL Извлечение данных___
+
+# общая функция извлечения данных
+def execute_read_query(connection, query):
+    cursor = connection.cursor()
+    result = None
+    try:
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as e:
+        print(f"The error '{e}' occurred")
+
+
+# SQL запрос на возрат все сообщения вместе с комментариями к сообщениям и именами пользователей
+def selectCompanyCountModel(conn):
+    print("# SQL запрос на поиск количества и общей стоимости телефонов каждого производителя")
+    number_cost_phones = execute_read_query(conn, sqlQuerySelect.select_number_cost_phones)
+    for number_cost_phone in number_cost_phones:
+        print(number_cost_phone)
+
+
