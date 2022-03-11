@@ -2,7 +2,8 @@
 select_number_cost_phones = """
 SELECT
   companyName as company,
-  COUNT(company_id) as phone
+  COUNT (company_id) as phone,
+  SUM (price) as phone
 FROM
   company,
   phone
@@ -11,6 +12,18 @@ WHERE
 GROUP BY
   phone.company_id
 """
+
+
+# SQL запрос всей таблицы моделей
+read_phone_models = """
+	SELECT
+		*
+	FROM
+		phone
+	ORDER BY
+		company_id
+"""
+
 #
 # select_post_likes = """
 # SELECT

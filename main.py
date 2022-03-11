@@ -13,11 +13,6 @@ sqlFunc.create_data_phone(connection)
 
 # чтение данных
 print("")
+sqlFunc.read_phone_models(connection)
+print("")
 sqlFunc.selectCompanyCountModel(connection)
-# sqlFunc.read_table_users(connection)
-# print("")
-# sqlFunc.read_table_posts(connection)
-# print("")
-# sqlFunc.read_users_posts(connection)
-# print("")
-# sqlFunc.readPostsDescName(connection)

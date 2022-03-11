@@ -71,6 +71,14 @@ def execute_read_query(connection, query):
 
 
 # SQL запрос на возрат все сообщения вместе с комментариями к сообщениям и именами пользователей
+def read_phone_models(conn):
+    print("# SQL запрос всей таблицы моделей")
+    read_table_phone_models = execute_read_query(conn, sqlQuerySelect.read_phone_models)
+    for read_table_phone_model in read_table_phone_models:
+        print(read_table_phone_model)
+
+
+# SQL запрос на возрат все сообщения вместе с комментариями к сообщениям и именами пользователей
 def selectCompanyCountModel(conn):
     print("# SQL запрос на поиск количества и общей стоимости телефонов каждого производителя")
     number_cost_phones = execute_read_query(conn, sqlQuerySelect.select_number_cost_phones)
