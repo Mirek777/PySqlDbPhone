@@ -69,8 +69,14 @@ def execute_read_query(connection, query):
     except Error as e:
         print(f"The error '{e}' occurred")
 
+# SQL запрос всей таблицы производителей
+def read_company(conn):
+    print("# SQL запрос всей таблицы производителей")
+    read_company_tabls = execute_read_query(conn, sqlQuerySelect.read_company_table)
+    for read_company_tabl in read_company_tabls:
+        print(read_company_tabl)
 
-# SQL запрос на возрат все сообщения вместе с комментариями к сообщениям и именами пользователей
+# SQL запрос всей таблицы телефонов
 def read_phone_models(conn):
     print("# SQL запрос всей таблицы моделей")
     read_table_phone_models = execute_read_query(conn, sqlQuerySelect.read_phone_models)
@@ -86,3 +92,9 @@ def selectCompanyCountModel(conn):
         print(number_cost_phone)
 
 
+# SQL запрос на вывод производителя телефона с наибольшей средней стоимостью телефона этого производителя
+def highAverCostPhone(conn):
+    print("# SQL запрос на вывод производителя телефона с наибольшей средней стоимостью телефона этого производителя")
+    high_average_cost_phones = execute_read_query(conn, sqlQuerySelect.high_average_cost_phone)
+    for high_average_cost_phone in high_average_cost_phones:
+        print(high_average_cost_phone)

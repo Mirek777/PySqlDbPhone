@@ -1,3 +1,25 @@
+# SQL запрос таблицы производителей
+read_company_table = """
+SELECT
+  companyName,
+  companyCountry
+FROM
+  company
+ORDER BY
+  companyName
+"""
+
+# SQL запрос всей таблицы моделей
+read_phone_models = """
+SELECT
+  *
+FROM
+  phone
+ORDER BY
+  company_id
+"""
+
+
 # SQL запрос на поиск количества и общей стоимости телефонов каждого производителя
 select_number_cost_phones = """
 SELECT
@@ -14,26 +36,16 @@ GROUP BY
 """
 
 
-# SQL запрос всей таблицы моделей
-read_phone_models = """
-	SELECT
-		*
-	FROM
-		phone
-	ORDER BY
-		company_id
+# SQL запрос на поиск производителя с наибольшей средней стоимостью телефона этого производителя
+high_average_cost_phone = """
+SELECT
+  companyName, 
+  price 
+FROM
+  company,
+  phone
+WHERE
+  company.companyId = phone.company_id
+ORDER BY
+  companyName
 """
-
-#
-# select_post_likes = """
-# SELECT
-#   description as Post,
-#   COUNT(likes.id) as Likes
-# FROM
-#   likes,
-#   posts
-# WHERE
-#   posts.id = likes.post_id
-# GROUP BY
-#   likes.post_id
-# """

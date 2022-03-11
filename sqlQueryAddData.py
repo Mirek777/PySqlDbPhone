@@ -7,6 +7,7 @@ VALUES
   (20, 'Apple', 'USA'),
   (33, 'Xiaomi', 'China'),
   (11, 'Nokia', 'Finland'),
+  (444, 'Samsung', 'South Korea'),
   (8, 'Huawei', 'China');
 """
 
