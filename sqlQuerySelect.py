@@ -23,16 +23,17 @@ ORDER BY
 # SQL запрос на поиск количества и общей стоимости телефонов каждого производителя
 select_number_cost_phones = """
 SELECT
-  companyName as company,
-  COUNT (company_id) as phone,
-  SUM (price) as phone
+  companyName,
+  COUNT (company_id),
+  SUM (COALESCE(phone.price, 0))
 FROM
-  company,
+  company
+LEFT JOIN
   phone
-WHERE
+ON 
   company.companyId = phone.company_id
 GROUP BY
-  phone.company_id
+  companyName
 """
 
 
