@@ -65,6 +65,24 @@ LEFT JOIN
   phone
 ON
   company.companyId = phone.company_id
+WHERE
+  companyCountry = 'China'
+GROUP BY
+  companyCountry
+"""
+
+# SQL запрос на полученеие списка самых дорогих моделей телефонов каждого производителя
+most_expensive_phone = """
+SELECT
+  companyName,
+  phoneModel,
+  MAX (price)
+FROM
+  company
+LEFT JOIN
+  phone
+ON
+  company.companyId = phone.company_id
 GROUP BY
   companyCountry
 """

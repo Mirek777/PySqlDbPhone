@@ -106,3 +106,11 @@ def countChinesePhone(conn):
     count_chinese_phones = execute_read_query(conn, sqlQuerySelect.count_chinese_phone)
     for count_chinese_phone in count_chinese_phones:
         print(count_chinese_phone)
+
+
+# SQL запрос на полученеие списка самых дорогих моделей телефонов каждого производителя
+def mostExpensivePhone(conn):
+    print("# SQL запрос на полученеие списка самых дорогих моделей телефонов каждого производителя")
+    most_expensive_phones = execute_read_query(conn, sqlQuerySelect.most_expensive_phone)
+    for most_expensive_phone in most_expensive_phones:
+        print(most_expensive_phone)
