@@ -12,13 +12,16 @@ ORDER BY
 # SQL запрос всей таблицы моделей
 read_phone_models = """
 SELECT
-  *
+  companyName, phoneModel, price, companyCountry, companyId
 FROM
+  company
+LEFT JOIN
   phone
-ORDER BY
-  company_id
+ON 
+  company.companyId = phone.company_id
+ORDER BY 
+  1 
 """
-
 
 # SQL запрос на поиск количества и общей стоимости телефонов каждого производителя
 select_number_cost_phones = """
@@ -39,7 +42,8 @@ GROUP BY
 # SQL запрос на поиск производителя с наибольшей средней стоимостью телефона этого производителя
 high_average_cost_phone = """
 SELECT 
-  companyName, avg(price) 
+  companyName, 
+  AVG(price) 
 FROM 
   phone,
   company
@@ -48,4 +52,19 @@ WHERE
 GROUP BY
   companyId
 ORDER BY 2 DESC LIMIT 1
+"""
+
+# SQL запрос на определения количества китайских товаров
+count_chinese_phone = """
+SELECT
+  companyCountry,
+  COUNT (company_id)
+FROM
+  company
+LEFT JOIN
+  phone
+ON
+  company.companyId = phone.company_id
+GROUP BY
+  companyCountry
 """

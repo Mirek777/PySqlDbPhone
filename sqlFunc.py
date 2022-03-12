@@ -98,3 +98,11 @@ def highAverCostPhone(conn):
     high_average_cost_phones = execute_read_query(conn, sqlQuerySelect.high_average_cost_phone)
     for high_average_cost_phone in high_average_cost_phones:
         print(high_average_cost_phone)
+
+
+# SQL запрос на определения количества китайских товаров
+def countChinesePhone(conn):
+    print("# SQL запрос на определения количества китайских товаров")
+    count_chinese_phones = execute_read_query(conn, sqlQuerySelect.count_chinese_phone)
+    for count_chinese_phone in count_chinese_phones:
+        print(count_chinese_phone)
