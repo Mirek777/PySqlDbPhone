@@ -4,6 +4,7 @@ add_company = """
 INSERT INTO
   company (companyId, companyName, companyCountry)
 VALUES
+  (21, 'OPPO', 'China'),
   (20, 'Apple', 'USA'),
   (33, 'Xiaomi', 'China'),
   (11, 'Nokia', 'Finland'),
@@ -11,11 +12,13 @@ VALUES
   (8, 'Huawei', 'China');
 """
 
+
 # SQL запрос на добавление данных в таблицу телефонов
 add_phone = """
 INSERT INTO
   phone (phoneId, phoneModel, company_id, price)
 VALUES
+  (112, 'SomeModel', 21, 21000),
   (43, 'iPhone 13 Pro Max', 20, 135000),
   (18, 'iPhone SE', 20, 105000),
   (16, 'iPhone XS', 20, 35000),

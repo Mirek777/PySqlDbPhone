@@ -58,7 +58,7 @@ ORDER BY 2 DESC LIMIT 1
 count_chinese_phone = """
 SELECT
   companyCountry,
-  COUNT (company_id)
+  COUNT (phoneId)
 FROM
   company
 LEFT JOIN
@@ -73,10 +73,10 @@ GROUP BY
 
 # SQL запрос на полученеие списка самых дорогих моделей телефонов каждого производителя
 most_expensive_phone = """
-SELECT
+SELECT  
   companyName,
   phoneModel,
-  MAX (price)
+  Max(coalesce(price,0))
 FROM
   company
 LEFT JOIN
@@ -84,5 +84,5 @@ LEFT JOIN
 ON
   company.companyId = phone.company_id
 GROUP BY
-  companyCountry
+  companyName
 """

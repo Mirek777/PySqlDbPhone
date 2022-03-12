@@ -2,7 +2,7 @@ import sqlFunc
 
 # создание базы данных
 connection = sqlFunc.create_connection("D:\\DBPhone.sqlite")
-
+#
 # # создание таблиц
 # sqlFunc.create_table_company(connection)
 # sqlFunc.create_table_phone(connection)
